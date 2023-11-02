@@ -1,0 +1,38 @@
+.landing {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 100svh;
+  background-color: #000000e8;
+  background-image: url('../../assets/stars_bg.png');
+  background-position: center;
+  background-repeat: repeat;
+}
+
+.landing_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.landing_container img {
+  width: calc(164px * var(--scaleFactor));
+  height: calc(166px * var(--scaleFactor));
+}
+
+.landing_container h1 {
+  font-size: var(--coverTextFS);
+  margin: calc(52px * var(--scaleFactor)) 0;
+  color: var(--blueColor);
+  text-align: center;
+}
+
+.landing_container button {
+  color: var(--whiteColor);
+  font-size: var(--FS24);
+  font-weight: 400;
+  background-color: var(--blueColor);
+  border-radius: 7px;
+  padding: 20px 100px;
+}

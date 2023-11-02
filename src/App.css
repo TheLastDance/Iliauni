@@ -2,6 +2,13 @@ body {
   min-height: 100svh;
 }
 
-h1 {
-  font-size: var(--h1FS);
+button {
+  border: none;
+  cursor: pointer;
+}
+
+p,
+a,
+span {
+  font-size: var(--minFS);
 }
