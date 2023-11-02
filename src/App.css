@@ -8,7 +8,24 @@ button {
 }
 
 p,
+h1,
+h2 {
+  color: var(--blackColor);
+  font-weight: 400;
+}
+
+p,
 a,
 span {
   font-size: var(--minFS);
+}
+
+input {
+  outline: none;
+  border: none;
+}
+
+input::placeholder {
+  color: #A5A5A5;
+  font-weight: 400;
 }

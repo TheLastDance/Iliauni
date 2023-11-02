@@ -26,6 +26,7 @@
   margin: calc(52px * var(--scaleFactor)) 0;
   color: var(--blueColor);
   text-align: center;
+  font-weight: 400;
 }
 
 .landing_container button {
