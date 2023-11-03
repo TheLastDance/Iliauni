@@ -9,7 +9,7 @@
   --minFS: calc(14px * var(--scaleFactor));
   --coverTextFS: calc(96px * var(--scaleFactor));
   --bigHeadingsFS: calc(64px * var(--scaleFactor));
-  --h1FS: calc(40px * var(--scaleFactor));
+  --FS40: calc(40px * var(--scaleFactor));
   --FS36: calc(36px * var(--scaleFactor));
   --FS24: calc(24px * var(--scaleFactor));
   --FS18: calc(18px * var(--scaleFactor));
@@ -17,7 +17,9 @@
   --blueColor: #4980C0;
   --whiteColor: #FFF;
   --grayColor: #E6EBFF;
+  --borderColor: #EBEBEB;
   --blackColor: #000;
+  --backgroundColor: #090707;
   --lightBlackColor: #353535;
 }
 

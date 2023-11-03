@@ -1,0 +1,52 @@
+.popup {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 280px;
+  height: 70px;
+  border-radius: 10px;
+  background: var(--whiteColor);
+  right: -280px;
+  top: 125px;
+  transition: ease-in-out 0.5s;
+}
+
+.visible {
+  right: 0;
+}
+
+.popup button {
+  background: var(--whiteColor);
+  font-size: var(--FS24);
+  font-weight: 700;
+}
+
+.close_icon {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 15px;
+  height: 15px;
+  top: 5px;
+  right: 5px;
+  cursor: pointer;
+}
+
+.close_icon span {
+  display: block;
+  width: 15px;
+  height: 2px;
+  background: var(--blackColor);
+}
+
+.close_icon span:nth-child(1) {
+  transform: rotate(45deg);
+}
+
+.close_icon span:nth-child(2) {
+  position: relative;
+  top: -2px;
+  transform: rotate(-45deg);
+}

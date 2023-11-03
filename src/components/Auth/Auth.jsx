@@ -1,10 +1,12 @@
 import './Auth.css'
 import { useState } from 'react';
 import add_photo_icon from "../../assets/add_photo_icon.svg"
+import { useNavigate } from 'react-router-dom';
 
 function Auth() {
   const [photo, setPhoto] = useState(null);
   const [name, setName] = useState('');
+  const navigate = useNavigate();
 
   const handlePhotoChange = (e) => {
     const profilePhoto = e.target.files[0];
@@ -26,6 +28,7 @@ function Auth() {
     if (photo && name) {
       localStorage.setItem('photo', photo);
       localStorage.setItem('name', name);
+      navigate('/form');
     }
   }
 
@@ -45,7 +48,7 @@ function Auth() {
             </label>
             <label>
               <p>fill in your name</p>
-              <input type="text" placeholder='your name' value={name} onChange={(e) => setName(e.target.value)} />
+              <input type="text" maxLength={20} placeholder='your name' value={name} onChange={(e) => setName(e.target.value)} />
             </label>
             <button type='submit' disabled={!(photo && name)}>Sign in</button>
           </form>
