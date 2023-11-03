@@ -1,0 +1,47 @@
+.api_container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding-bottom: 20px;
+}
+
+.api_container .cards_list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 20px 0;
+}
+
+.rc-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+}
+
+.rc-pagination-item {
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.rc-pagination-item a {
+  font-size: var(--FS18);
+  color: var(--whiteColor);
+}
+
+.rc-pagination-item-active a,
+.customLink-active {
+  text-decoration: underline;
+  font-weight: 700;
+}
+
+
+.rc-pagination-next span,
+.rc-pagination-prev span {
+  margin: 0 5px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: var(--FS24);
+  position: relative;
+  bottom: 2px;
+  color: var(--whiteColor);
+}

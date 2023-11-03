@@ -14,6 +14,7 @@ function App() {
         <Route path='/auth' element={<Auth />} ></Route>
         <Route path='/form' element={<Form />} ></Route>
         <Route path='/api' element={<Api />} ></Route>
+        <Route path='/api/:num' element={<Api />} ></Route>
       </Routes>
     </>
   )

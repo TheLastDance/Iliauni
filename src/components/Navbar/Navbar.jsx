@@ -9,8 +9,6 @@ function Navbar() {
   const name = localStorage.getItem('name');
   const photo = localStorage.getItem('photo');
 
-  console.log(isPopupOpen);
-
   return (
     <header>
       <nav>

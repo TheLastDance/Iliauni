@@ -7,7 +7,7 @@ nav {
 }
 
 nav a,
-p {
+nav p {
   font-size: var(--FS40);
   color: var(--whiteColor);
 }

@@ -1,7 +1,6 @@
 body {
   min-height: 100svh;
   background: var(--backgroundColor);
-  /*delete later*/
 }
 
 button {
