@@ -20,6 +20,10 @@ export function usePaginate(arr, qty) {
     if (arr.length) setPageContent(handleContent());
   }, [page])
 
+  useEffect(() => {
+    setPage(+num || 1)
+  }, [num])
+
   const linkablePage = (current, type, element) => {
     if (type === 'page') {
       return <NavLink to={`/api/${current}`} className={({ isActive }) => isActive ? 'customLink-active' : ''}>{current}</NavLink>
