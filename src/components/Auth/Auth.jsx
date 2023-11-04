@@ -2,8 +2,9 @@ import './Auth.css'
 import { useState } from 'react';
 import add_photo_icon from "../../assets/add_photo_icon.svg"
 import { useNavigate } from 'react-router-dom';
+import Authentificated from '../../hocs/Authentificated';
 
-function Auth() {
+const Auth = Authentificated(() => {
   const [photo, setPhoto] = useState(null);
   const [name, setName] = useState('');
   const navigate = useNavigate();
@@ -56,6 +57,6 @@ function Auth() {
       </section>
     </main>
   )
-}
+})
 
 export default Auth;

@@ -1,13 +1,15 @@
 import { Navigate } from "react-router-dom";
 
-function Authentificated({ children }) {
-  const isAuth = localStorage.getItem("name");
+function Authentificated(Component) {
+  return function AuthentificatedComponent(props) {
+    const isAuth = localStorage.getItem("name");
 
-  if (isAuth) {
-    return <Navigate to={'/form'}></Navigate>
+    if (isAuth) {
+      return <Navigate to={'/form'} />
+    }
+
+    return <Component {...props} />
   }
-
-  return children
 }
 
 export default Authentificated;

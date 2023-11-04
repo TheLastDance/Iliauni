@@ -4,8 +4,9 @@ import Post from './Post/Post';
 import { useEffect, useState } from 'react';
 import Pagination from 'rc-pagination';
 import { usePaginate } from '../../customHooks/usePaginate';
+import NotAuthentificated from '../../hocs/NotAuthentificated';
 
-function Api() {
+const Api = NotAuthentificated(() => {
   const [response, setResponse] = useState([]);
   const { page, pageContent, setPage, linkablePage } = usePaginate(response, 10);
 
@@ -40,6 +41,6 @@ function Api() {
       </main>
     </>
   )
-}
+})
 
 export default Api;

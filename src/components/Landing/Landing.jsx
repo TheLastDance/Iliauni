@@ -1,8 +1,9 @@
 import './Landing.css'
 import { Link } from 'react-router-dom';
-import notepad_img from "../../assets/notepad.png"
+import notepad_img from "../../assets/notepad.png";
+import Authentificated from '../../hocs/Authentificated';
 
-function Landing() {
+const Landing = Authentificated(() => {
 
   return (
     <main>
@@ -15,6 +16,6 @@ function Landing() {
       </section>
     </main>
   )
-}
+})
 
 export default Landing;
