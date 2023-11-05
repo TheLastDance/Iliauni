@@ -35,10 +35,14 @@
 }
 
 
-.rc-pagination-next span,
-.rc-pagination-prev span {
+.rc-pagination-next,
+.rc-pagination-prev {
   margin: 0 5px;
   cursor: pointer;
+}
+
+.rc-pagination-next span,
+.rc-pagination-prev span {
   font-weight: 700;
   font-size: var(--FS24);
   position: relative;

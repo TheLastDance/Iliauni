@@ -1,0 +1,19 @@
+.student_info {
+  text-transform: uppercase;
+}
+
+.student_info:nth-child(odd) {
+  background: #f6f6f6;
+}
+
+.student_info .email {
+  text-transform: none;
+}
+
+.student_info td {
+  text-align: center;
+  font-size: var(--FS14);
+  font-weight: 400;
+  color: var(--blackColor);
+  padding: 15px 60px;
+}

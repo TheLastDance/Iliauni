@@ -1,0 +1,17 @@
+.dropDown_container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.dropDown {
+  display: flex;
+  cursor: pointer;
+  width: fit-content;
+}
+
+.dropDown p {
+  color: var(--lightBlackColor);
+  font-size: var(--FS14);
+  font-weight: 500;
+}

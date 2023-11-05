@@ -1,0 +1,44 @@
+.students_table {
+  max-width: 1000px;
+  min-height: 580px;
+  overflow-x: scroll;
+  margin: 25px 0 0 0;
+  background: var(--whiteColor);
+  border-radius: 10px;
+  padding-bottom: 10px;
+}
+
+.students_table table {
+  border-collapse: collapse;
+}
+
+table th {
+  font-size: var(--FS14);
+  font-weight: 700;
+  color: var(--lightBlackColor);
+  padding: 15px 60px;
+  border-bottom: 1px solid var(--blueColor);
+}
+
+.score_th {
+  position: relative;
+}
+
+.score_th_sorticons {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  right: 20%;
+  top: 32%;
+  cursor: pointer;
+}
+
+.score_th_sorticons img:nth-child(1) {
+  transform: rotate(-90deg);
+}
+
+.score_th_sorticons img:nth-child(2) {
+  transform: rotate(90deg);
+}
+
+/*styles of pagination are defined inside api component css file*/

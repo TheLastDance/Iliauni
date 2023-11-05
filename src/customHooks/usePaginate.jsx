@@ -1,50 +1,35 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { useParams } from "react-router-dom";
-import { NavLink, Link } from 'react-router-dom';
+import { useSearchParams } from "react-router-dom";
 
-
-export function usePaginate(arr, qty) {
-  const { num } = useParams();
+// first arg array of objects for our pagination, second is quantity of items at one page, third is querying arg (searchparams or useparams) by default it has none value.
+export function usePaginate(arr, qty, queryParam = 'none') {
+  const { num } = useParams(); // need if we want to save page number in the link as parameter
+  const [searchParams] = useSearchParams(); // need if we want to save page number as search parameter
   const [pageContent, setPageContent] = useState([]);
-  const [page, setPage] = useState(num || 1);
+  const [page, setPage] = useState(+searchParams.get('page') || num || 1);
 
-  function handleContent() {
-    return arr.slice(qty * (page - 1), page * qty);
-  }
+  const handleContent = useMemo(() => arr.slice(qty * (page - 1), page * qty), [page, arr]) // returns array of objects which should be shown
 
   useEffect(() => {
-    if (arr.length) setPageContent(handleContent());
+    setPageContent(handleContent);
+    if (queryParam === 'search' && arr.length && !handleContent.length) setPage(1);
+    if (queryParam === 'param' && arr.length && !handleContent.length) setPage(1); // if such pages doesn't exist, change it to first page
   }, [arr])
 
   useEffect(() => {
-    if (arr.length) setPageContent(handleContent());
+    setPageContent(handleContent);
   }, [page])
 
   useEffect(() => {
-    setPage(+num || 1)
+    if (queryParam === 'param' && !(arr.length && !handleContent.length)) setPage(+num || 1);
   }, [num])
 
-  const linkablePage = (current, type, element) => {
-    if (type === 'page') {
-      return <NavLink to={`/api/${current}`} className={({ isActive }) => isActive ? 'customLink-active' : ''}>{current}</NavLink>
-    }
-
-    if (type === 'next') {
-      return <Link to={`/api/${current}`}><span>{">"}</span></Link>
-    }
-
-    if (type === 'prev') {
-      if (current) return <Link to={`/api/${current}`}><span>{"<"}</span></Link>
-      return <span>{"<"}</span>
-    }
-
-    return element;
-  }
+  console.log(arr);
 
   return {
     page,
     pageContent,
-    setPage,
-    linkablePage
+    setPage
   };
 }

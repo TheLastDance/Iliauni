@@ -5,10 +5,11 @@ import { useEffect, useState } from 'react';
 import Pagination from 'rc-pagination';
 import { usePaginate } from '../../customHooks/usePaginate';
 import NotAuthentificated from '../../hocs/NotAuthentificated';
+import { Link, NavLink } from 'react-router-dom';
 
 const Api = NotAuthentificated(() => {
   const [response, setResponse] = useState([]);
-  const { page, pageContent, setPage, linkablePage } = usePaginate(response, 10);
+  const { page, pageContent, setPage } = usePaginate(response, 10, 'param');
 
   const fetchData = async () => {
     try {
@@ -21,6 +22,25 @@ const Api = NotAuthentificated(() => {
   }
 
   useEffect(() => fetchData, []);
+
+  const linkablePage = (current, type, element) => {
+    if (type === 'page') {
+      return <NavLink to={`/api/${current}`} className={({ isActive }) => isActive ? 'customLink-active' : ''}>{current}</NavLink>
+    }
+
+    if (type === 'next') {
+      return <Link to={`/api/${current}`}><span>{">"}</span></Link>
+    }
+
+    if (type === 'prev') {
+      if (current) return <Link to={`/api/${current}`}><span>{"<"}</span></Link>
+      return <span>{"<"}</span>
+    }
+
+    return element;
+  }
+
+  console.log("render api");
 
   return (
     <>

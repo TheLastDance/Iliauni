@@ -1,6 +1,7 @@
 body {
   min-height: 100svh;
   background: var(--backgroundColor);
+  overflow-x: hidden;
 }
 
 button {
