@@ -1,4 +1,5 @@
 import './Navbar.css'
+import { useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import { useToggle } from '../../customHooks/useToggle';
 import { useLocation } from 'react-router-dom';
@@ -12,7 +13,7 @@ function Navbar() {
 
   return (
     <header>
-      <nav>
+      <nav className='navigation'>
         <div className='container_1'>
           {location.pathname === '/form' ? <p>Form</p> : <Link to={'/form'} >Form</Link>}
           <Link to={'/api'} >API</Link>
@@ -22,7 +23,7 @@ function Navbar() {
           <div className='photo_container' onClick={togglePopup}>
             <img src={photo} alt="profile photo" />
           </div>
-          <Popup isPopupOpen={isPopupOpen} closePopup={handleFalse} />
+          <Popup isPopupOpen={isPopupOpen} closePopup={useCallback(handleFalse, [isPopupOpen])} />
         </div>
       </nav>
     </header>

@@ -1,4 +1,4 @@
 .form_page {
-  max-width: 1000px;
+  max-width: calc(var(--scaleFactor) * 1000px);
   margin: 25px auto 0 auto;
 }

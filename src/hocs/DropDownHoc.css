@@ -15,3 +15,10 @@
   font-size: var(--FS14);
   font-weight: 500;
 }
+
+@media(max-width:1440px) {
+  .dropDown_container {
+    margin-bottom: 0;
+    margin-right: 10px;
+  }
+}

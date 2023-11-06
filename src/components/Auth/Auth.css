@@ -49,8 +49,8 @@
 }
 
 .circle_image {
-  width: 200px;
-  height: 200px;
+  width: calc(var(--scaleFactor) * 200px);
+  height: calc(var(--scaleFactor) * 200px);
   border-radius: 50%;
   background: var(--grayColor);
   display: flex;
@@ -83,4 +83,36 @@
 .authCard_container_form label,
 .authCard_container_form label:nth-child(2) input {
   margin-top: 40px;
+}
+
+@media(max-width:576px) {
+  .authCard_container {
+    padding: 0 75px;
+  }
+
+  .authCard_container h2 {
+    margin-top: 20px;
+  }
+
+  .authCard_container_form label:nth-child(2) input {
+    padding: 20px;
+  }
+
+  .authCard_container_form button {
+    padding: 15px 0;
+    margin: 20px 0;
+  }
+
+  .circle_image,
+  .authCard_container_form label,
+  .authCard_container_form label:nth-child(2) input {
+    margin-top: 20px;
+  }
+
+}
+
+@media(max-width:410px) {
+  .authCard_container {
+    padding: 0 10px;
+  }
 }

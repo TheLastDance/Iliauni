@@ -17,3 +17,9 @@
   color: var(--blackColor);
   padding: 15px 60px;
 }
+
+@media(max-width:768px) {
+  .student_info td {
+    padding: 15px 30px;
+  }
+}

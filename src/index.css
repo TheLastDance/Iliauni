@@ -28,3 +28,27 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+@media(max-width:1440px) {
+  :root {
+    --scaleFactor: 0.9;
+  }
+}
+
+@media(max-width:1000px) {
+  :root {
+    --scaleFactor: 0.85;
+  }
+}
+
+@media(max-width:768px) {
+  :root {
+    --scaleFactor: 0.8;
+  }
+}
+
+@media(max-width:576px) {
+  :root {
+    --scaleFactor: 0.7;
+  }
+}

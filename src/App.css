@@ -9,6 +9,10 @@ button {
   cursor: pointer;
 }
 
+h1 {
+  font-size: var(--FS24);
+}
+
 p,
 h1,
 h2 {

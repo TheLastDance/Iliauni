@@ -1,9 +1,10 @@
 import './Popup.css'
+import { memo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import ReactDOM from 'react-dom';
 import OutsideClickHandler from 'react-outside-click-handler';
 
-function Popup({ isPopupOpen, closePopup }) {
+const Popup = memo(({ isPopupOpen, closePopup }) => {
   const navigate = useNavigate();
   const OverlayElement = document.getElementById("overlay");
 
@@ -24,6 +25,7 @@ function Popup({ isPopupOpen, closePopup }) {
       </div>
     </OutsideClickHandler>
   </div>, OverlayElement)
-}
+})
 
+Popup.displayName = 'Popup';
 export default Popup;

@@ -37,3 +37,9 @@
   border-radius: 7px;
   padding: 20px 100px;
 }
+
+@media(max-width:410px) {
+  .landing_container button {
+    padding: 20px 60px;
+  }
+}

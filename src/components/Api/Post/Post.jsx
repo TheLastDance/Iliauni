@@ -1,6 +1,7 @@
+import { memo } from 'react';
 import './Post.css'
 
-function Post({ item }) {
+const Post = memo(({ item }) => {
 
   return (
     <li className="post">
@@ -11,6 +12,7 @@ function Post({ item }) {
       </div>
     </li>
   )
-}
+})
 
+Post.displayName = 'Post';
 export default Post;

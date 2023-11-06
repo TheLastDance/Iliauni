@@ -49,3 +49,29 @@
   bottom: 2px;
   color: var(--whiteColor);
 }
+
+@media(max-width:1000px) {
+  .api_container {
+    margin: 0 5px;
+  }
+}
+
+@media(max-width:768px) {
+  .api_container {
+    margin: 0 5px;
+  }
+
+  .api_container .cards_list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media(max-width:410px) {
+  .api_container {
+    margin: 0 5px;
+  }
+
+  .api_container .cards_list {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

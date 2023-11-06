@@ -1,3 +1,7 @@
+.filters {
+  position: relative;
+}
+
 .filters_buttons {
   display: flex;
   justify-content: space-between;
@@ -46,9 +50,9 @@
 
 .filter_popup {
   position: absolute;
-  left: -290px;
-  max-width: 290px;
-  height: 270px;
+  left: -100%;
+  min-width: 260px;
+  min-height: 245px;
   background: var(--whiteColor);
   padding: 40px 20px;
   margin: 25px 0;
@@ -57,7 +61,7 @@
 }
 
 .filter_popup_active {
-  left: 3%;
+  left: -270px;
 }
 
 .filter_popup label {
@@ -65,14 +69,54 @@
   font-size: var(--FS14);
   font-weight: 400;
   color: var(--blackColor);
+  width: fit-content;
+  width: -moz-fit-content;
 }
 
 .filter_popup label input {
   margin-right: 5px;
 }
 
+@media(max-width:1550px) {
+  .filter_popup {
+    min-width: fit-content;
+    width: -moz-fit-content;
+  }
+
+  .filter_popup_active {
+    left: -220px;
+  }
+}
+
 @media(max-width:1440px) {
+  .filter_popup {
+    position: relative;
+    left: 0;
+    min-width: unset;
+    min-height: unset;
+    padding: 10px 20px;
+    transition: unset;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .filter_popup label {
+    display: flex;
+  }
+
   .filter_popup_active {
     left: 0;
+  }
+}
+
+@media(max-width:410px) {
+  .filters_buttons button {
+    width: 120px;
+  }
+
+  .search_label input {
+    padding: 5px 0;
+    padding-left: 40px;
+    max-width: 150px;
   }
 }

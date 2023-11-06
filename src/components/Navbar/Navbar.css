@@ -1,4 +1,4 @@
-nav {
+.navigation {
   display: flex;
   justify-content: space-between;
   height: 120px;
@@ -6,8 +6,8 @@ nav {
   border-bottom: 1px solid var(--borderColor);
 }
 
-nav a,
-nav p {
+.navigation a,
+.navigation p {
   font-size: var(--FS40);
   color: var(--whiteColor);
 }
@@ -36,9 +36,42 @@ nav p {
 }
 
 .container_2 img {
-  width: 80px;
-  height: 80px;
+  width: calc(var(--scaleFactor) * 80px);
+  height: calc(var(--scaleFactor) * 80px);
   border-radius: 50%;
   margin-left: 30px;
   cursor: pointer;
+}
+
+@media(max-width:850px) {
+
+  .container_1,
+  .container_2 {
+    padding: 0 5px;
+  }
+}
+
+@media(max-width:768px) {
+  .navigation {
+    flex-direction: column;
+    height: unset;
+    padding: 5px 0;
+  }
+
+  .container_1,
+  .container_2 {
+    align-items: center;
+    justify-content: center;
+  }
+
+  .container_1 {
+    border-right: none;
+  }
+
+}
+
+@media(max-width:410px) {
+  .container_2 p {
+    font-size: var(--FS24);
+  }
 }

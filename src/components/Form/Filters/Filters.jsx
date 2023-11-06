@@ -45,7 +45,7 @@ const Filters = memo(({ setData, page, setPage }) => {
   }, [page])
 
   return (
-    <section>
+    <section className='filters'>
       <div className='filters_buttons'>
         <button type='button' onClick={setFilterToggle} >
           <img src={filter_icon} alt="filter icon" />

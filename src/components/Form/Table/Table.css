@@ -1,8 +1,8 @@
 .students_table {
-  max-width: 1000px;
-  min-height: 580px;
+  max-width: calc(var(--scaleFactor) * 1000px);
+  min-height: calc(var(--scaleFactor) * 580px);
   overflow-x: scroll;
-  margin: 25px 0 0 0;
+  margin: 25px auto 0 auto;
   background: var(--whiteColor);
   border-radius: 10px;
   padding-bottom: 10px;
@@ -42,3 +42,24 @@ table th {
 }
 
 /*styles of pagination are defined inside api component css file*/
+
+@media(max-width:768px) {
+  .students_table {
+    min-height: calc(var(--scaleFactor) * 640px);
+  }
+
+  table th {
+    padding: 15px 30px;
+  }
+
+  .score_th_sorticons {
+    right: 10%;
+    top: 28%;
+  }
+}
+
+@media(max-width:576px) {
+  .students_table {
+    min-height: calc(var(--scaleFactor) * 700px);
+  }
+}
