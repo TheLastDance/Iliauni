@@ -4,6 +4,7 @@ import Landing from './components/Landing/Landing';
 import Auth from './components/Auth/Auth';
 import Form from './components/Form/Form';
 import Api from './components/Api/Api';
+import NotFoundPage from './components/NotFoundPage/NotFoundPage';
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
         <Route path='/form' element={<Form />} ></Route>
         <Route path='/api' element={<Api />} ></Route>
         <Route path='/api/:num' element={<Api />} ></Route>
+        <Route path='/*' element={<NotFoundPage />} ></Route>
       </Routes>
     </>
   )
