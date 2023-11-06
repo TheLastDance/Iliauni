@@ -21,7 +21,9 @@ const Api = NotAuthentificated(() => {
     }
   }
 
-  useEffect(() => fetchData, []);
+  useEffect(() => {
+    fetchData()
+  }, []);
 
   const linkablePage = (current, type, element) => {
     if (type === 'page') {
@@ -39,8 +41,6 @@ const Api = NotAuthentificated(() => {
 
     return element;
   }
-
-  console.log("render api");
 
   return (
     <>

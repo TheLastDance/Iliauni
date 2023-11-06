@@ -25,8 +25,6 @@ export function usePaginate(arr, qty, queryParam = 'none') {
     if (queryParam === 'param' && !(arr.length && !handleContent.length)) setPage(+num || 1);
   }, [num])
 
-  console.log(arr);
-
   return {
     page,
     pageContent,
