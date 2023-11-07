@@ -63,6 +63,7 @@
   font-size: var(--FS36);
   padding: 20px;
   width: 100%;
+  font-family: var(--mainFont);
 }
 
 .authCard_container_form button {
@@ -73,6 +74,7 @@
   width: 80%;
   padding: 15px 0;
   margin: 40px 0;
+  font-family: var(--mainFont);
 }
 
 .authCard_container_form button:disabled {

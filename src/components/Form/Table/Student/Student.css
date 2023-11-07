@@ -15,7 +15,8 @@
   font-size: var(--FS14);
   font-weight: 400;
   color: var(--blackColor);
-  padding: 15px 60px;
+  padding: 12px 60px;
+  font-family: var(--mainFont);
 }
 
 @media(max-width:768px) {

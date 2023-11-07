@@ -35,6 +35,10 @@
   min-width: 30%;
 }
 
+.container_2 p {
+  font-weight: 500;
+}
+
 .container_2 img {
   width: calc(var(--scaleFactor) * 80px);
   height: calc(var(--scaleFactor) * 80px);

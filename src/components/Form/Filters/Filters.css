@@ -46,6 +46,7 @@
 .filters_buttons button {
   font-size: var(--FS18);
   font-weight: 500;
+  font-family: (var(--mainFont));
 }
 
 .filter_popup {
@@ -65,6 +66,7 @@
 }
 
 .filter_popup label {
+  text-transform: uppercase;
   margin: 3px 0 3px 15px;
   font-size: var(--FS14);
   font-weight: 400;

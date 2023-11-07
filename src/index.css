@@ -1,5 +1,5 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Montserrat', Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -21,6 +21,10 @@
   --blackColor: #000;
   --backgroundColor: #090707;
   --lightBlackColor: #353535;
+  --headingFont: 'Rowdies';
+  --mainFont: 'Montserrat';
+  --paginationFont: 'FiraGO';
+  --tableHeadingFont: 'Helvetica';
 }
 
 * {

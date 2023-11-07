@@ -27,6 +27,7 @@
   color: var(--blueColor);
   text-align: center;
   font-weight: 400;
+  font-family: var(--headingFont);
 }
 
 .landing_container button {
@@ -36,6 +37,7 @@
   background-color: var(--blueColor);
   border-radius: 7px;
   padding: 20px 100px;
+  font-family: var(--mainFont);
 }
 
 @media(max-width:410px) {

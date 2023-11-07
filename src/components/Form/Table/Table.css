@@ -1,6 +1,6 @@
 .students_table {
   max-width: calc(var(--scaleFactor) * 1000px);
-  min-height: calc(var(--scaleFactor) * 580px);
+  min-height: calc(var(--scaleFactor) * 595px);
   overflow-x: scroll;
   margin: 25px auto 0 auto;
   background: var(--whiteColor);
@@ -16,8 +16,9 @@ table th {
   font-size: var(--FS14);
   font-weight: 700;
   color: var(--lightBlackColor);
-  padding: 15px 60px;
+  padding: 12px 60px;
   border-bottom: 1px solid var(--blueColor);
+  font-family: var(--tableHeadingFont);
 }
 
 .score_th {
@@ -43,9 +44,15 @@ table th {
 
 /*styles of pagination are defined inside api component css file*/
 
+@media(max-width:1000px) {
+  .students_table {
+    min-height: calc(var(--scaleFactor) * 610px);
+  }
+}
+
 @media(max-width:768px) {
   .students_table {
-    min-height: calc(var(--scaleFactor) * 640px);
+    min-height: calc(var(--scaleFactor) * 680px);
   }
 
   table th {
