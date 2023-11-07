@@ -9,7 +9,8 @@ import { Link, NavLink } from 'react-router-dom';
 
 const Api = NotAuthentificated(() => {
   const [response, setResponse] = useState([]);
-  const { page, pageContent, setPage } = usePaginate(response, 10, 'param');
+  const paginationSize = 10;
+  const { page, pageContent, setPage } = usePaginate(response, paginationSize, 'param');
 
   const fetchData = async () => {
     try {
@@ -50,13 +51,18 @@ const Api = NotAuthentificated(() => {
           <ul className='cards_list'>
             {pageContent.map(item => <Post item={item} key={item.id} ></Post>)}
           </ul>
-          {pageContent.length ? <Pagination
-            current={page}
-            showTitle={false}
-            total={response.length}
-            onChange={(current) => setPage(current)}
-            itemRender={linkablePage}
-          /> : null}
+          {pageContent.length ? <div className='pagination_container'>
+            <Link to={`/api/${1}`}><span>{'<<'}</span></Link>
+            <Pagination
+              current={page}
+              showTitle={false}
+              total={response.length}
+              onChange={(current) => setPage(current)}
+              itemRender={linkablePage}
+              pageSize={paginationSize}
+            />
+            <Link to={`/api/${Math.ceil(response.length / paginationSize)}`}><span>{'>>'}</span></Link>
+          </div> : null}
         </section>
       </main>
     </>

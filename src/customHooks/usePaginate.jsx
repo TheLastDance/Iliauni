@@ -10,6 +10,9 @@ export function usePaginate(arr, qty, queryParam = 'none') {
   const [page, setPage] = useState(Math.abs(+searchParams.get('page')) || Math.abs(+num) || 1); // need Math.abs to prevent negative numbers in params
 
   const handleContent = useMemo(() => arr.slice(qty * (page - 1), page * qty), [page, arr]) // returns array of objects which should be shown on specific page
+  const defineLastPage = () => {
+    setPage(Math.ceil(arr.length / qty));
+  }
 
   useEffect(() => {
     setPageContent(handleContent);
@@ -38,6 +41,7 @@ export function usePaginate(arr, qty, queryParam = 'none') {
   return {
     page,
     pageContent,
-    setPage
+    setPage,
+    defineLastPage
   };
 }

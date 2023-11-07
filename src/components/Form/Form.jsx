@@ -11,7 +11,7 @@ import { usePaginate } from '../../customHooks/usePaginate';
 const Form = NotAuthentificated(() => {
   const paginationSize = 7;
   const [data, setData] = useState(students);
-  const { page, pageContent, setPage } = usePaginate(data, paginationSize, 'search');
+  const { page, pageContent, setPage, defineLastPage } = usePaginate(data, paginationSize, 'search');
 
   return (
     <>
@@ -20,7 +20,7 @@ const Form = NotAuthentificated(() => {
         <Filters setData={setData} page={page} setPage={setPage} />
         <Table setData={setData} pageContent={pageContent} />
         <section>
-          {pageContent.length ? <Pagination
+          {pageContent.length ? <div className='pagination_container'> <span onClick={() => setPage(1)} >{'<<'}</span> <Pagination
             current={page}
             pageSize={paginationSize}
             showTitle={false}
@@ -28,7 +28,7 @@ const Form = NotAuthentificated(() => {
             onChange={(current) => setPage(current)}
             nextIcon={<span>{'>'}</span>}
             prevIcon={<span>{"<"}</span>}
-          /> : null}
+          /> <span onClick={() => defineLastPage()}>{'>>'}</span> </div> : null}
         </section>
       </main>
     </>
