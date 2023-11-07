@@ -12,7 +12,7 @@ const Form = NotAuthentificated(() => {
   const paginationSize = 7;
   const [data, setData] = useState(students);
   const { page, pageContent, setPage } = usePaginate(data, paginationSize, 'search');
-
+  console.log(+'-5');
   return (
     <>
       <Navbar />

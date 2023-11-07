@@ -35,12 +35,12 @@ const Api = NotAuthentificated(() => {
     }
 
     if (type === 'prev') {
-      if (current) return <Link to={`/api/${current}`}><span>{"<"}</span></Link>
+      if (current) return <Link to={`/api/${current}`}><span>{"<"}</span></Link> // check to prevent go to page 0
       return <span>{"<"}</span>
     }
 
     return element;
-  }
+  } // customisation of pagination
 
   return (
     <>

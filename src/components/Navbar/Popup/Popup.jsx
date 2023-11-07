@@ -12,7 +12,7 @@ const Popup = memo(({ isPopupOpen, closePopup }) => {
     localStorage.removeItem('photo');
     localStorage.removeItem('name');
     navigate('/');
-  }
+  } // logout mock
 
   return ReactDOM.createPortal(<div className={isPopupOpen ? "popup_overlay visible" : "popup_overlay"}>
     <OutsideClickHandler onOutsideClick={closePopup}>
